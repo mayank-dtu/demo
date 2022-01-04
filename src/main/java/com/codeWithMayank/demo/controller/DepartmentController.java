@@ -5,6 +5,7 @@ import com.codeWithMayank.demo.service.DepartmentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 import java.util.Optional;
 
@@ -15,9 +16,8 @@ public class DepartmentController {
     private DepartmentService departmentService;
 
     @PostMapping("/departments")
-    public String addDepartment(@RequestBody Department department){
-        departmentService.addDepartment(department);
-        return "Department Added Successfully";
+    public Department addDepartment(@Valid @RequestBody Department department){
+        return departmentService.addDepartment(department);
     }
 
     @GetMapping("/departments")
