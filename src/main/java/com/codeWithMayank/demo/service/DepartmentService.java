@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Optional;
 
 public interface DepartmentService {
-    public void addDepartment(Department department);
+    public Department addDepartment(Department department);
 
     public List<Department> listDepartment();
 
